@@ -1,39 +1,78 @@
 @media (prefers-reduced-motion: no-preference) {
-  .reveal {
-    --reveal-duration: 0.6s;
-    --reveal-easing: cubic-bezier(0.16, 1, 0.3, 1);
-    --reveal-offset: 16px;
+  :root {
+    scroll-behavior: smooth;
+    --entrance-easing: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .reveal[data-variant="fade"] {
-    --reveal-offset: 0px;
+  .hero-copy > * {
+    animation: enter-up 640ms var(--entrance-easing) both;
   }
 
-  .reveal[data-trigger="load"] {
-    animation: reveal-in var(--reveal-duration) var(--reveal-easing) var(--reveal-delay) both;
+  .hero-copy h1 {
+    animation-delay: 60ms;
   }
 
-  .reveal[data-state="hidden"]:not(:focus-within) {
-    opacity: 0;
-    transform: translateY(var(--reveal-offset));
+  .hero-description {
+    animation-delay: 120ms;
   }
 
-  .reveal[data-state="shown"] {
-    transition:
-      opacity var(--reveal-duration) var(--reveal-easing) var(--reveal-delay),
-      transform var(--reveal-duration) var(--reveal-easing) var(--reveal-delay);
+  .hero-actions {
+    animation-delay: 180ms;
+  }
+
+  .reveal[data-revealed="true"] {
+    animation: enter-up 560ms var(--entrance-easing) var(--reveal-delay) both;
+  }
+
+  .hero-actions:focus-within,
+  .reveal[data-revealed="true"]:focus-within {
+    animation: none;
+  }
+
+  .hero-visual-wrap[data-revealed="true"] .pathway-step:nth-child(2) {
+    --step-delay: 300ms;
+  }
+
+  .hero-visual-wrap[data-revealed="true"] .pathway-step:nth-child(3) {
+    --step-delay: 500ms;
+  }
+
+  .hero-visual-wrap[data-revealed="true"] .pathway-node {
+    animation: node-arrival 460ms var(--entrance-easing) var(--step-delay, 100ms) both;
+  }
+
+  .hero-visual-wrap[data-revealed="true"] .pathway-step::after {
+    animation: draw-connector 220ms ease-out var(--step-delay, 100ms) both;
   }
 }
 
-@keyframes reveal-in {
+@keyframes enter-up {
   from {
-    opacity: 0;
-    transform: translateY(var(--reveal-offset));
+    opacity: 0.35;
+    transform: translateY(16px);
+  }
+}
+
+@keyframes node-arrival {
+  from {
+    scale: 0.88;
+    background-color: #a8c858;
+  }
+  65% {
+    scale: 1.08;
+  }
+}
+
+@keyframes draw-connector {
+  from {
+    transform: scaleY(0);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .connexa-site * {
+  .connexa-site *,
+  .connexa-site *::before,
+  .connexa-site *::after {
     animation: none;
     transition: none;
   }

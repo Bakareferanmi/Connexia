@@ -6,7 +6,7 @@ export function ApproachSection() {
     <section className="approach-section" id="approach" aria-labelledby="approach-title">
       <div className="site-width">
         <Reveal className="section-heading" as="header">
-          <p className="section-kicker">01 / Our approach</p>
+          <p className="section-kicker">Our approach</p>
           <div className="section-heading-grid">
             <h2 id="approach-title">Reduce the distance between talent and trust.</h2>
             <p>
@@ -18,13 +18,13 @@ export function ApproachSection() {
         </Reveal>
 
         <div className="approach-list">
-          {approachItems.map((item) => (
-            <article className="approach-item" key={item.number}>
-              <span className="approach-number">{item.number}</span>
+          {approachItems.map((item, index) => (
+            <Reveal as="article" className="approach-item" delay={index * 0.06} key={item.number}>
+              <span className="approach-number" aria-hidden="true">{item.number}</span>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
               <span className="approach-rule" aria-hidden="true" />
-            </article>
+            </Reveal>
           ))}
         </div>
       </div>

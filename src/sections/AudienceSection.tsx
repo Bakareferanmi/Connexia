@@ -10,7 +10,7 @@ export function AudienceSection() {
     >
       <div className="site-width audience-layout">
         <Reveal className="audience-copy">
-          <p className="section-kicker section-kicker-dark">02 / Who we support</p>
+          <p className="section-kicker section-kicker-dark">Who we support</p>
           <h2 id="institutions-title">
             For people on the move, and the institutions assessing them.
           </h2>
@@ -24,19 +24,13 @@ export function AudienceSection() {
           className="audience-list"
           aria-label="People and institutions CONNEXA aims to support"
         >
-          {audiences.map((audience) => (
-            <li key={audience}>
+          {audiences.map((audience, index) => (
+            <Reveal as="li" className="audience-item" delay={index * 0.05} key={audience}>
               <span className="audience-dot" aria-hidden="true" />
               {audience}
-            </li>
+            </Reveal>
           ))}
         </ul>
-      </div>
-      <div className="site-width audience-footerline" aria-hidden="true">
-        <span>PEOPLE</span>
-        <span>CONTEXT</span>
-        <span>INSTITUTIONS</span>
-        <span>OPPORTUNITY</span>
       </div>
     </section>
   );

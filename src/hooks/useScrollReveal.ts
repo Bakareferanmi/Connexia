@@ -1,29 +1,27 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
-export function useScrollReveal(enabled: boolean) {
-  const ref = useRef<HTMLElement>(null);
-  const [state, setState] = useState<'idle' | 'hidden' | 'shown'>('idle');
+export function useScrollReveal() {
+  const elementRef = useRef<HTMLElement>(null);
+  const [revealed, setRevealed] = useState(false);
+  const ref = useCallback((element: HTMLElement | null) => {
+    elementRef.current = element;
+  }, []);
 
   useEffect(() => {
-    const element = ref.current;
-    if (!enabled || !element || !('IntersectionObserver' in window)) return;
+    const element = elementRef.current;
+    if (!element || !('IntersectionObserver' in window)) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    const bounds = element.getBoundingClientRect();
-    // Keep content that is visible at load, including at a direct anchor link, visible.
-    if (bounds.bottom > 0 && bounds.top < window.innerHeight) return;
-
-    setState('hidden');
-    const threshold = Math.min(0.2, window.innerHeight / bounds.height);
     const observer = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting || entry.intersectionRatio < threshold) return;
+      if (!entry.isIntersecting) return;
 
-      setState('shown');
+      setRevealed(true);
       observer.disconnect();
-    }, { threshold });
+    }, { rootMargin: '0px 0px 8px 0px' });
 
     observer.observe(element);
     return () => observer.disconnect();
-  }, [enabled]);
+  }, []);
 
-  return { ref, state };
+  return { ref, revealed };
 }

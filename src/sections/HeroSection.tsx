@@ -1,12 +1,12 @@
 import { Reveal } from '../components/Reveal';
-import { contactHref, siteTagline } from '../content/site';
+import { contactSectionHref, siteTagline } from '../content/site';
 import { PathwayCard } from './PathwayCard';
 
 export function HeroSection() {
   return (
     <section className="hero-band" aria-labelledby="hero-title">
       <div className="site-width hero-layout">
-        <Reveal className="hero-copy" trigger="load" variant="fade-up">
+        <div className="hero-copy">
           <p className="hero-tagline">{siteTagline}</p>
           <p className="hero-overline">Credential verification across borders</p>
           <h1 id="hero-title">Credibility should travel with talent.</h1>
@@ -17,23 +17,18 @@ export function HeroSection() {
             international recognition and opportunity.
           </p>
           <div className="hero-actions">
-            <a className="button button-lime" href={contactHref}>
+            <a className="button button-lime" href={contactSectionHref}>
               Talk about verification
             </a>
             <a className="hero-text-link" href="#approach">
               Explore our approach
             </a>
           </div>
-        </Reveal>
+        </div>
 
-        <Reveal className="hero-visual-wrap" trigger="load" variant="fade" delay={0.12}>
+        <Reveal className="hero-visual-wrap" delay={0.1}>
           <PathwayCard />
         </Reveal>
-      </div>
-      <div className="site-width hero-footline" aria-hidden="true">
-        <span>AFRICAN QUALIFICATIONS &amp; EXPERIENCE</span>
-        <span className="footline-route" />
-        <span>INTERNATIONAL RECOGNITION &amp; OPPORTUNITY</span>
       </div>
     </section>
   );

@@ -40,10 +40,10 @@
   }
 
   .header-inner {
-    min-height: auto;
     grid-template-columns: minmax(0, 1fr) auto;
-    gap: 12px 8px;
-    padding-block: 14px 13px;
+    grid-template-rows: 44px 44px;
+    gap: 2px 8px;
+    padding-block: 5px 4px;
   }
 
   .brand-lockup {
@@ -58,32 +58,36 @@
   }
 
   .header-contact {
-    min-height: 40px;
-    padding-inline: 11px;
-    font-size: 10px;
+    padding-inline: 14px;
+    font-size: 13px;
   }
 
   .primary-nav {
     grid-column: 1 / -1;
     grid-row: 2;
     justify-content: space-between;
-    gap: 15px;
-    padding-top: 4px;
+    gap: 8px;
   }
 
   .primary-nav a {
-    font-size: 12px;
+    padding-inline: 8px;
+    font-size: 13px;
+  }
+
+  .primary-nav a::after {
+    right: 8px;
+    left: 8px;
   }
 
   .hero-layout {
     min-height: auto;
     grid-template-columns: minmax(0, 1fr);
     gap: 45px;
-    padding-block: 63px 45px;
+    padding-block: 48px 52px;
   }
 
   .hero-tagline {
-    margin-bottom: 24px;
+    margin-bottom: 17px;
     font-size: 13px;
   }
 
@@ -99,7 +103,7 @@
   }
 
   .hero-actions {
-    gap: 18px;
+    gap: 12px 18px;
     margin-top: 25px;
   }
 
@@ -113,16 +117,8 @@
     padding: 25px 24px 22px;
   }
 
-  .hero-footline {
-    grid-template-columns: 1fr 28px 1fr;
-    gap: 10px;
-    padding-bottom: 20px;
-    font-size: 8px;
-    line-height: 1.5;
-  }
-
   .approach-section {
-    padding: 80px 0 87px;
+    padding: 66px 0 72px;
   }
 
   .section-heading-grid {
@@ -135,11 +131,6 @@
   .audience-copy h2,
   .closing-copy h2 {
     font-size: clamp(42px, 9vw, 60px);
-  }
-
-  .section-heading-grid > p,
-  .audience-copy > p:last-child {
-    font-size: 14px;
   }
 
   .approach-list {
@@ -174,32 +165,22 @@
   }
 
   .audience-section {
-    padding-top: 80px;
+    padding-block: 66px;
   }
 
   .audience-layout {
     grid-template-columns: minmax(0, 1fr);
     gap: 37px;
-    padding-bottom: 62px;
   }
 
   .audience-list {
     max-width: 600px;
   }
 
-  .audience-footerline {
-    flex-wrap: wrap;
-    font-size: 8px;
-  }
-
   .closing-layout {
     grid-template-columns: minmax(0, 1fr);
     gap: 27px;
     padding-block: 66px 70px;
-  }
-
-  .closing-action p {
-    font-size: 13px;
   }
 
   .footer-main {
@@ -221,7 +202,7 @@
     justify-content: space-between;
     gap: 13px 20px;
     padding-block: 15px;
-    font-size: 8px;
+    font-size: 10px;
   }
 
   .footer-bottom span:nth-child(2) {
@@ -245,18 +226,9 @@
     height: 32px;
   }
 
-  .header-contact {
-    padding-inline: 9px;
-    font-size: 9px;
-  }
-
-  .primary-nav a {
-    font-size: 11px;
-  }
-
   .hero-layout {
     gap: 35px;
-    padding-top: 55px;
+    padding-top: 38px;
   }
 
   .hero-tagline {
@@ -268,17 +240,22 @@
   }
 
   .hero-copy h1 {
-    font-size: clamp(45px, 13vw, 54px);
+    font-size: clamp(42px, 13vw, 51px);
   }
 
   .hero-description {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.72;
   }
 
   .hero-actions {
-    align-items: flex-start;
+    align-items: stretch;
     flex-direction: column;
+    gap: 5px;
+  }
+
+  .hero-text-link {
+    justify-content: center;
   }
 
   .button {
@@ -291,8 +268,8 @@
 
   .pathway-heading {
     min-height: auto;
-    flex-direction: column-reverse;
-    gap: 14px;
+    flex-direction: column;
+    gap: 12px;
     padding-bottom: 18px;
   }
 
@@ -309,25 +286,10 @@
     font-size: 16px;
   }
 
-  .pathway-copy span {
-    font-size: 11px;
-  }
-
-  .hero-footline {
-    grid-template-columns: 1fr 18px 1fr;
-    gap: 7px;
-    font-size: 7px;
-    letter-spacing: 0.08em;
-  }
-
   .section-heading h2,
   .audience-copy h2,
   .closing-copy h2 {
-    font-size: 42px;
-  }
-
-  .audience-list li {
-    font-size: 12px;
+    font-size: clamp(36px, 11vw, 42px);
   }
 
   .footer-main {

@@ -8,8 +8,16 @@
 
 :root {
   color-scheme: light;
+  scroll-padding-top: var(--header-height);
+  --header-height: 76px;
   --font-body: Manrope, Arial, sans-serif;
   --font-display: var(--font-body);
+}
+
+@media (max-width: 760px) {
+  :root {
+    --header-height: 100px;
+  }
 }
 
 body {

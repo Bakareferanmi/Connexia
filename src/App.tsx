@@ -7,7 +7,7 @@ import { HeroSection } from './sections/HeroSection';
 
 export default function App() {
   return (
-    <div className="connexa-site">
+    <div className="connexa-site" id="top">
       <a className="skip-link" href="#main-content">
         Skip to content
       </a>

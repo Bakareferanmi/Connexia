@@ -2,6 +2,7 @@ export const siteName = 'CONNEXA';
 export const siteTagline = 'Connecting Talent Without Borders.';
 export const contactEmail = 'veridoc-2@polsia.app';
 export const contactHref = `mailto:${contactEmail}?subject=CONNEXA%20institutional%20conversation`;
+export const contactSectionHref = '#contact';
 
 export const navigationLinks = [
   { href: '#approach', label: 'Our approach' },
