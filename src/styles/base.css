@@ -1,0 +1,40 @@
+@font-face {
+  font-family: Manrope;
+  src: url('/fonts/manrope/manrope-latin.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --font-body: Manrope, Arial, sans-serif;
+  --font-display: var(--font-body);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: #f5f2e8;
+  color: #143d31;
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+:where(h1, h2, h3, p, ol, ul, figure) {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: inherit;
+}
+
+svg {
+  display: block;
+}
+
+strong {
+  font-weight: bolder;
+}

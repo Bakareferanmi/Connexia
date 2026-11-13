@@ -1,0 +1,33 @@
+export function ConnexaMark() {
+  return (
+    <svg
+      className="connexa-mark"
+      width="40"
+      height="40"
+      viewBox="0 0 48 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <rect width="48" height="48" rx="12" fill="#143D31" />
+      <path
+        d="M8 15h9.6a7.2 7.2 0 0 1 5.1 2.1l7.2 7.2a7.2 7.2 0 0 0 5.1 2.1H40"
+        stroke="#C7F13A"
+        strokeWidth="3.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8 33h9.6a7.2 7.2 0 0 0 5.1-2.1l7.2-7.2a7.2 7.2 0 0 1 5.1-2.1H40"
+        stroke="#F5F2E8"
+        strokeWidth="3.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle cx="8" cy="15" r="2.2" fill="#C7F13A" />
+      <circle cx="8" cy="33" r="2.2" fill="#F5F2E8" />
+      <circle cx="40" cy="26.4" r="2.2" fill="#C7F13A" />
+    </svg>
+  );
+}

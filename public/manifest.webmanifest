@@ -1,0 +1,10 @@
+{
+  "name": "CONNEXA",
+  "short_name": "CONNEXA",
+  "description": "CONNEXA is developing credential verification to reduce credibility barriers for African qualifications and professional experience across borders.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f2e8",
+  "theme_color": "#f5f2e8",
+  "icons": [{ "src": "icon.svg", "type": "image/svg+xml", "sizes": "any" }]
+}
